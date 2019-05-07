@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "linker_key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

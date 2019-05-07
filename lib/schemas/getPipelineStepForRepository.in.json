@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        },
+        "pipeline_uuid": {
+            "required": true,
+            "type": "string"
+        },
+        "step_uuid": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

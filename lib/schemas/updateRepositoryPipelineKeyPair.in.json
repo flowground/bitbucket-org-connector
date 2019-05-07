@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "additionalProperties": true,
+                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                    "discriminator": {
+                        "propertyName": "type"
+                    },
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": true,
+                    "description": "A Pipelines SSH key pair.",
+                    "properties": {
+                        "private_key": {
+                            "description": "The SSH private key. This value will be empty when retrieving the SSH key pair.",
+                            "type": "string"
+                        },
+                        "public_key": {
+                            "description": "The SSH public key.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}

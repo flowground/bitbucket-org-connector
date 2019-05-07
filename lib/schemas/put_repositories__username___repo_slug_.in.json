@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {}
+    }
+}

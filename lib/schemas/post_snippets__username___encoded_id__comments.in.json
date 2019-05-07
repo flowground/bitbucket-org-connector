@@ -1,0 +1,286 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "encoded_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "additionalProperties": true,
+                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                    "discriminator": {
+                        "propertyName": "type"
+                    },
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": true,
+                    "description": "A snippet object.",
+                    "properties": {
+                        "created_on": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "creator": {
+                            "allOf": [
+                                {
+                                    "additionalProperties": true,
+                                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                                    "discriminator": {
+                                        "propertyName": "type"
+                                    },
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "type"
+                                    ],
+                                    "type": "object"
+                                },
+                                {
+                                    "additionalProperties": true,
+                                    "description": "An account object.",
+                                    "properties": {
+                                        "created_on": {
+                                            "format": "date-time",
+                                            "type": "string"
+                                        },
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "links": {
+                                            "additionalProperties": false,
+                                            "properties": {
+                                                "avatar": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "followers": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "following": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "html": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "repositories": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "self": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "username": {
+                                            "pattern": "^[a-zA-Z0-9_\\-]+$",
+                                            "type": "string"
+                                        },
+                                        "uuid": {
+                                            "type": "string"
+                                        },
+                                        "website": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "id": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "is_private": {
+                            "type": "boolean"
+                        },
+                        "owner": {
+                            "allOf": [
+                                {
+                                    "additionalProperties": true,
+                                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                                    "discriminator": {
+                                        "propertyName": "type"
+                                    },
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "type"
+                                    ],
+                                    "type": "object"
+                                },
+                                {
+                                    "additionalProperties": true,
+                                    "description": "An account object.",
+                                    "properties": {
+                                        "created_on": {
+                                            "format": "date-time",
+                                            "type": "string"
+                                        },
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "links": {
+                                            "additionalProperties": false,
+                                            "properties": {
+                                                "avatar": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "followers": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "following": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "html": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "repositories": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "self": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "href": {
+                                                            "format": "uri",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "username": {
+                                            "pattern": "^[a-zA-Z0-9_\\-]+$",
+                                            "type": "string"
+                                        },
+                                        "uuid": {
+                                            "type": "string"
+                                        },
+                                        "website": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "scm": {
+                            "description": "The DVCS used to store the snippet.",
+                            "enum": [
+                                "hg",
+                                "git"
+                            ],
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "updated_on": {
+                            "format": "date-time",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}

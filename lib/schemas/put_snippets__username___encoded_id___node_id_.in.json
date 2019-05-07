@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "encoded_id": {
+            "required": true,
+            "type": "string"
+        },
+        "node_id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

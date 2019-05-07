@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "additionalProperties": true,
+                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                    "discriminator": {
+                        "propertyName": "type"
+                    },
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": true,
+                    "description": "A Pipelines variable.",
+                    "properties": {
+                        "key": {
+                            "description": "The unique name of the variable.",
+                            "type": "string"
+                        },
+                        "secured": {
+                            "description": "If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.",
+                            "type": "boolean"
+                        },
+                        "uuid": {
+                            "description": "The UUID identifying the variable.",
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the variable. If the variable is secured, this will be empty.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}

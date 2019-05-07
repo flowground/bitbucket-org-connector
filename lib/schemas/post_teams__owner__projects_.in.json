@@ -1,0 +1,209 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "additionalProperties": true,
+                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                    "discriminator": {
+                        "propertyName": "type"
+                    },
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": true,
+                    "description": "A Bitbucket project.\n            Projects are used by teams to organize repositories.",
+                    "properties": {
+                        "created_on": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "is_private": {
+                            "description": "\nIndicates whether the project is publicly accessible, or whether it is\nprivate to the team and consequently only visible to team members.\nNote that private projects cannot contain public repositories.",
+                            "type": "boolean"
+                        },
+                        "key": {
+                            "description": "The project's key.",
+                            "type": "string"
+                        },
+                        "links": {
+                            "additionalProperties": false,
+                            "properties": {
+                                "avatar": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "href": {
+                                            "format": "uri",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "html": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "href": {
+                                            "format": "uri",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "name": {
+                            "description": "The name of the project.",
+                            "type": "string"
+                        },
+                        "owner": {
+                            "allOf": [
+                                {
+                                    "allOf": [
+                                        {
+                                            "additionalProperties": true,
+                                            "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                                            "discriminator": {
+                                                "propertyName": "type"
+                                            },
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "type"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        {
+                                            "additionalProperties": true,
+                                            "description": "An account object.",
+                                            "properties": {
+                                                "created_on": {
+                                                    "format": "date-time",
+                                                    "type": "string"
+                                                },
+                                                "display_name": {
+                                                    "type": "string"
+                                                },
+                                                "links": {
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "avatar": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "followers": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "following": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "html": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "repositories": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "self": {
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "href": {
+                                                                    "format": "uri",
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "username": {
+                                                    "pattern": "^[a-zA-Z0-9_\\-]+$",
+                                                    "type": "string"
+                                                },
+                                                "uuid": {
+                                                    "type": "string"
+                                                },
+                                                "website": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "additionalProperties": true,
+                                    "description": "A team object.",
+                                    "properties": {},
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "updated_on": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "uuid": {
+                            "description": "The project's immutable id.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}

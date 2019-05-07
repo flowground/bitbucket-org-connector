@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "pull_request_id": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

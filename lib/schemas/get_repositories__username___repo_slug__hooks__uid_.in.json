@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "uid": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

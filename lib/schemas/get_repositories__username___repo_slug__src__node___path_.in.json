@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "format": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "meta"
+            ]
+        },
+        "node": {
+            "required": true,
+            "type": "string"
+        },
+        "path": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

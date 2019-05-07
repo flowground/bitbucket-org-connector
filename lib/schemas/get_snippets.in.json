@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "role": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "owner",
+                "contributor",
+                "member"
+            ]
+        }
+    }
+}

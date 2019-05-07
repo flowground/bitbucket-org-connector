@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "subject_type": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "user",
+                "repository",
+                "team"
+            ]
+        }
+    }
+}

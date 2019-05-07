@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "context": {
+            "required": false,
+            "type": "integer"
+        },
+        "path": {
+            "required": false,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

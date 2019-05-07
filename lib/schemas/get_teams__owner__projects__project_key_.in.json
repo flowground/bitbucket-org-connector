@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "owner": {
+            "required": true,
+            "type": "string"
+        },
+        "project_key": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

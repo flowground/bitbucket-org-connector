@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "role": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "admin",
+                "contributor",
+                "member",
+                "owner"
+            ]
+        }
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {
+            "required": true,
+            "type": "string"
+        },
+        "repo_slug": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "additionalProperties": true,
+                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                    "discriminator": {
+                        "propertyName": "type"
+                    },
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": true,
+                    "description": "A Pipelines known host.",
+                    "properties": {
+                        "hostname": {
+                            "description": "The hostname of the known host.",
+                            "type": "string"
+                        },
+                        "public_key": {
+                            "description": "The public key of the known host.",
+                            "allOf": [
+                                {
+                                    "additionalProperties": true,
+                                    "description": "Base type for most resource objects. It defines the common `type` element that identifies an object's type. It also identifies the element as Swagger's `discriminator`.",
+                                    "discriminator": {
+                                        "propertyName": "type"
+                                    },
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "type"
+                                    ],
+                                    "type": "object"
+                                },
+                                {
+                                    "additionalProperties": true,
+                                    "description": "A Pipelines known host public key.",
+                                    "properties": {
+                                        "key": {
+                                            "description": "The base64 encoded public key.",
+                                            "type": "string"
+                                        },
+                                        "key_type": {
+                                            "description": "The type of the public key.",
+                                            "type": "string"
+                                        },
+                                        "md5_fingerprint": {
+                                            "description": "The MD5 fingerprint of the public key.",
+                                            "type": "string"
+                                        },
+                                        "sha256_fingerprint": {
+                                            "description": "The SHA-256 fingerprint of the public key.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            ]
+                        },
+                        "uuid": {
+                            "description": "The UUID identifying the known host.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        }
+    }
+}
